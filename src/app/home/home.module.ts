@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { SignInComponent } from './signin/signin.component';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { VMessageModule } from '../shared/vmessage/vmessage.module';
 
 @NgModule({
-    imports: [
-        CommonModule
-    ],
-    declarations: [SignInComponent]
+    declarations: [ SignInComponent ],
+    imports: [ ReactiveFormsModule, CommonModule, VMessageModule]
 })
-export class HomeModule{}
+export class HomeModule {  }
