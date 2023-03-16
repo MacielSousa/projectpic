@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { AuthGard } from './core/auth/auth.guards';
 import { SignInComponent } from './home/signin/signin.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
@@ -13,12 +14,18 @@ import { SignUpComponent } from './home/singup/signup.component';
 const routes: Routes = [
     {
         path: '', 
-        component: SignInComponent,
-        canActivate: [AuthGard]
-    },
-    {
-        path: 'signup', 
-        component: SignUpComponent
+        component: HomeComponent,
+        canActivate: [AuthGard],
+        children:[
+            {
+                path: '', 
+                component: SignInComponent
+            },
+            {
+                path: 'signup', 
+                component: SignUpComponent
+            },
+        ]
     },
     {
         path: 'user/:userName',
