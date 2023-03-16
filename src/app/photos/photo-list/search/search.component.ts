@@ -11,6 +11,7 @@ export class SearchComponent implements OnInit, OnDestroy{
     @Output() onTyping = new EventEmitter<string>();
     @Input() value: string = '';
     debounce: Subject<string> = new Subject<string>();
+    filter = '';
 
 
     ngOnInit(): void {
