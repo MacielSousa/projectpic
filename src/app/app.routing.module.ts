@@ -7,6 +7,7 @@ import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { RouterModule, Routes } from "@angular/router";
 import { ErrorsModule } from './errors/errors.module';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { SignUpComponent } from './home/singup/signup.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
         path: '', 
         component: SignInComponent,
         canActivate: [AuthGard]
+    },
+    {
+        path: 'signup', 
+        component: SignUpComponent
     },
     {
         path: 'user/:userName',
